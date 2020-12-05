@@ -1,0 +1,10 @@
+package com.project.api.models;
+
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name = "COMMENTARY")
+public class Commentary {
+
+	
+}

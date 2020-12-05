@@ -1,0 +1,5 @@
+package com.project.api.models;
+
+public class Publication {
+
+}

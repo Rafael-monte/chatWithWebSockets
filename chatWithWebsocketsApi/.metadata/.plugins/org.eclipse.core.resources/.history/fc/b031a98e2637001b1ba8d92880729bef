@@ -1,0 +1,5 @@
+package com.project.api.models.exceptions;
+
+public class RegisterNotFoundException {
+
+}

@@ -1,0 +1,5 @@
+package com.project.api.config;
+
+public class SecurityConfig {
+
+}

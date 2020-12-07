@@ -1,5 +1,6 @@
 package com.project.api.services;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,29 @@ public class UserService {
 		return optUser.get();
 	}
 	
+	public User save(User user) {
+		log.info("Salvando novo usuario...");
+		return repository.saveAndFlush(user);
+	}
 	
-//	public User login(User user) throws RegisterNotFoundException {
-//		
-//	}
+	public User update(User user) throws RegisterNotFoundException {
+		User _user = this.getById(user.getId());
+		_user.setUsername(user.getUsername());
+		_user.setPhoto(user.getPhoto());
+		_user.setFriendCode(user.getFriendCode());
+		_user.setLastTimeOnline(user.getLastTimeOnline());
+		return repository.saveAndFlush(_user);
+	}
+	
+	public User updateLastTimeOnline(Long id) throws RegisterNotFoundException {
+		User _user = this.getById(id);
+		_user.setLastTimeOnline(LocalDateTime.now());
+		return this.update(_user);
+	}
+	
+	public User deleteById(Long id) throws RegisterNotFoundException {
+		User user = this.getById(id);
+		repository.delete(user);
+		return user;
+	}
 }

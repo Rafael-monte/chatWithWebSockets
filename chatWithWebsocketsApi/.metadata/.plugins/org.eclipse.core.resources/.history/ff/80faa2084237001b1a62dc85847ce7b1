@@ -1,0 +1,36 @@
+'-':
+- 'changeSet:'
+- 'createTable:'
+- 'column:'
+author: Rafael
+autoIncrement: true
+changes: ''
+columns: ''
+constraints: ''
+databaseChangeLog: ''
+foreignKeyName:
+- publication_fk
+- file_fk
+- user_fk
+id: 6
+name:
+- ID
+- PUBLICATION
+- TEXT
+- FILE
+- PUBLISHINGDATE
+- UPVOTES
+- USER
+nullable:
+- false
+- true
+primaryKey: true
+references:
+- PUBLICATION(ID)
+- FILE(ID)
+- USER(ID)
+tableName: COMMENTARY
+type:
+- int
+- varchar
+- timestamp

@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Rafael
+      changes:
+        - createTable:
+            tableName: FRIENDSHIP
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: USER
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: user_fk
+                    references: USER(ID)
+              - column:
+                  name: FRIEND
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: friend_fk
+                    references: USER(ID)

@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Rafael
+      changes:
+        - createTable:
+            tableName: FILEMODEL
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: DOWNLOADURI
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: DATAUPLOAD
+                  type: timestamp
+                  constraints:
+                    nullable: false

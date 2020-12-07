@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: ./add-table-file-model.yaml
+  - include:
+      file: ./add-table-user.yaml
+  - include:
+      file: ./add-table-friendship.yaml
+  - include:
+      file: ./add-table-friendship-request.yaml
+  - include:
+      file: ./add-table-publication.yaml
+  - include:
+      file: ./add-table-commentary.yaml

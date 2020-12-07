@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: Rafael
+      changes:
+        - createTable:
+            tableName: COMMENTARY
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: PUBLICATION
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: publication_fk
+                    references: PUBLICATION(ID)
+              - column:
+                  name: TEXT
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: FILE
+                  type: int
+                  constraints:
+                    nullable: true
+                    foreignKeyName: file_fk
+                    references: FILEMODEL(ID)
+              - column:
+                  name: PUBLISHINGDATE
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: UPVOTES
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: USER
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: user_fk
+                    references: USER(ID)

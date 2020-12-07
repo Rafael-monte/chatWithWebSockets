@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: Rafael
+      changes:
+        - createTable:
+            tableName: PUBLICATION
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: text
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PUBLISHINGDATE
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: FILE
+                  type: int
+                  constraints:
+                    nullable: true
+                    foreignKeyName: file_fk
+                    references: FILEMODEL(ID)
+              - column:
+                  name: TAGS
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: UPVOTES
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: USER
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: user_fk
+                    references: USER(ID)

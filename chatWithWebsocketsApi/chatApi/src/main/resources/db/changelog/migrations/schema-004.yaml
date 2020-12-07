@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: Rafael
+      changes:
+        - createTable:
+            tableName: FRIENDSHIPREQUEST
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: USERWHOSENT
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: user_who_sent_fk
+                    references: USER(ID)
+              - column:
+                  name: DESTINATARY
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: destinatary_fk
+                    references: USER(ID)
+              - column:
+                  name: SENDDATE
+                  type: timestamp
+                  constraints:
+                    nullable: false

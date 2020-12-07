@@ -1,0 +1,51 @@
+package com.project.api.services;
+
+import java.time.LocalDateTime;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.api.models.User;
+import com.project.api.models.exceptions.RegisterNotFoundException;
+import com.project.api.repositories.UserRepository;
+
+import lombok.extern.log4j.Log4j2;
+
+@Service
+@Log4j2
+public class UserService {
+
+	@Autowired
+	private UserRepository repository;
+	
+	public User getById(Long id) throws RegisterNotFoundException{
+		Optional<User> optUser = repository.findById(id);
+		if (optUser.isEmpty()) {
+			log.info("Não foi possível encontrar o usuario de id "+id);
+			throw new RegisterNotFoundException();
+		}
+		log.info("Buscando o usuario de id "+id);
+		return optUser.get();
+	}
+	
+	public User save(User user) {
+		log.info("Salvando novo usuario...");
+		return repository.saveAndFlush(user)user;
+	}
+	
+	public User update(User user) throws RegisterNotFoundException {
+		User _user = this.getById(user.getId());
+		_user.setUsername(user.getUsername());
+		_user.setPhoto(user.getPhoto());
+		_user.setFriendCode(user.getFriendCode());
+		_user.setLastTimeOnline(user.getLastTimeOnline());
+		return repository.saveAndFlush(_user);
+	}
+	
+	public User updateLastTimeOnline(Long id) throws RegisterNotFoundException {
+		User _user = this.getById(id);
+		_user.setLastTimeOnline(LocalDateTime.now());
+		return this.update(_user);
+	}
+}

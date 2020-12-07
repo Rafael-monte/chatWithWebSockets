@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      path: .db/changelog/migrations/add-table-file-model.yaml
+  - include:
+      path: .db/changelog/migrations/add-table-user.yaml
+  - include:
+      path: .db/changelog/migrations/add-table-friendship.yaml
+  - include:
+      path: .db/changelog/migrations/add-table-friendship-request.yaml
+  - include:
+      path: .db/changelog/migrations/add-table-publication.yaml
+  - include:
+      path: .db/changelog/migrations/add-table-commentary.yaml

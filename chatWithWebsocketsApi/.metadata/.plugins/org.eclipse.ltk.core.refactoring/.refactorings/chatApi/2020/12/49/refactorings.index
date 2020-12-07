@@ -1,3 +1,12 @@
 1607191729179	Rename type 'UsuarioRepository'
 1607191867088	Rename type 'FriendshipRequest'
 1607192060054	Rename type 'FileModel'
+1607199914312	Delete element
+1607200770186	Rename resource 'db.changelogmaster.yaml'
+1607200920198	Rename resource 'add-table-usuario.yaml'
+1607204391368	Delete element
+1607204503993	Delete element
+1607204568641	Delete element
+1607204605700	Rename resource 'db.changelog-master.yaml['
+1607204617764	Delete element
+1607204836317	Delete element

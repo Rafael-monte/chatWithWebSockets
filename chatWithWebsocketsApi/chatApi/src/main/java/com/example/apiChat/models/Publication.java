@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "PUBLICATION", schema = "public")
+@Table(name = "PUBLICACAO", schema = "public")
 public class Publication {
 
 	@Id
@@ -38,11 +38,11 @@ public class Publication {
 	private int upVotes;
 	
 	@ManyToOne
-	@JoinColumn(name = "FILE")
+	@JoinColumn(name = "PHOTO")
 	private FileModel file;
 	
 	@ManyToOne
-	@JoinColumn(name = "USER")
+	@JoinColumn(name = "USUARIO")
 	private User user;
 }
 

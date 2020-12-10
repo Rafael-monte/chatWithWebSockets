@@ -33,14 +33,14 @@ public class Commentary {
 	private String text;
 	
 	@ManyToOne
-	@JoinColumn(name = "FILE")
+	@JoinColumn(name = "PHOTO")
 	private FileModel file;
 	
 	@Column(name = "PUBLISHINGDATE")
 	private LocalDateTime publishingDate;
 	
 	@ManyToOne
-	@JoinColumn(name = "USER")
+	@JoinColumn(name = "USUARIO")
 	private User user;
 	
 	@Column(name = "UPVOTES")

@@ -24,7 +24,7 @@ public class Friendship {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "USER")
+	@JoinColumn(name = "USUARIO")
 	private User user;
 	
 	@ManyToOne

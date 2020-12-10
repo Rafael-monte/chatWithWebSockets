@@ -1,3 +1,0 @@
-databaseChangeLog:
-  - include:
-      path: ./migrations/order-migrations.yaml

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;gs-accessing-data-rest-initial&apos;" deleteContents="true" description="Delete resource &apos;gs-accessing-data-rest-initial&apos;" element1="/gs-accessing-data-rest-initial" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1607179746876"/>
-</session>

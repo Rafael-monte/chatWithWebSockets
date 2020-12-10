@@ -1,9 +1,0 @@
-'-': 'include:'
-databaseChangeLog: ''
-file:
-- ./db/changelog/migrations/add-table-file-model.yaml
-- ./db/changelog/migrations/add-table-user.yaml
-- ./db/changelog/migrations/add-table-friendship.yaml
-- ./db/changelog/migrations/add-table-frienship-request.yaml
-- ./db/changelog/migrations/add-table-publication.yaml
-- ./db/changelog/migrations/add-table-commentary.yaml

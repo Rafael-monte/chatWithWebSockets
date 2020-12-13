@@ -13,4 +13,7 @@ export class HomePage {
   redirectToRegistro(): void {
     this.router.navigate([`registro`]);
   }
+  redirectToLogin(): void {
+    this.router.navigate([`login`]);
+  }
 }

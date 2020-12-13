@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Form, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { AnimationBuilder, AnimationController, IonHeader, ToastController } from '@ionic/angular';
 import { User } from '../core/models/user.models';
 import { UserService } from '../core/services/user.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -15,12 +16,12 @@ export class RegistroPage implements OnInit {
   constructor(
     private userService: UserService,
     private toast: ToastController,
-    private router: Router
+    private router: Router,
+    private animationCtrl: AnimationController
   ) { }
 
   usuario: User = new User();
   confirmacaoPassword: string = '';
-  
   ngOnInit() {
   }
 

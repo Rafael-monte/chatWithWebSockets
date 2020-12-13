@@ -1,0 +1,34 @@
+<ion-header>
+  <br><br>
+    <div style="display: inline-block; margin-left: 10px; margin-right: 10px; margin-top: 5px;">
+      <ion-buttons>
+        <ion-button fill="outline" (click)="openMenu()" style="--border-color: #77DD77;"><ion-icon name="menu-outline" style="color: #77DD77;"></ion-icon></ion-button> 
+        <ion-button fill="outline" style="--border-color: #77DD77;"><ion-icon name="person-circle-outline" style="color: #77DD77"></ion-icon></ion-button>
+      </ion-buttons>
+    </div>
+
+  <h2 style="color: whitesmoke; font-weight: bold; font-family: 'Montserrat';">&nbsp;&nbsp;Bem vindo &nbsp;&nbsp;{{usuario.username}}!</h2>
+</ion-header>
+
+<ion-menu side="start" menuId="first" contentId="main" style="--width: 100px;">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="color: #77DD77; font-weight: bolder; font-family: 'Montserrat';" >Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content style="background-color: black;">
+
+
+</ion-content>
+<ion-router-outlet id="main"></ion-router-outlet>

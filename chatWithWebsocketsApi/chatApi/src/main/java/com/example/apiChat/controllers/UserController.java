@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.apiChat.models.User;
+import com.example.apiChat.models.exceptions.InvalidPasswordException;
 import com.example.apiChat.models.exceptions.RegisterNotFoundException;
 import com.example.apiChat.models.exceptions.UsuarioDuplicadoException;
 import com.example.apiChat.services.UserService;
@@ -46,6 +47,11 @@ public class UserController {
 		return ResponseEntity.ok(service.save(user));
 	}
 	
+	@CrossOrigin(origins = "*")
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path="/login")
+	public ResponseEntity<User> login(@RequestBody User user) throws InvalidPasswordException, RegisterNotFoundException {
+		return ResponseEntity.ok(service.login(user));
+	}
 	
 	@CrossOrigin(origins = "*")
 	@PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)

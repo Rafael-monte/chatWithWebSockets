@@ -14,7 +14,7 @@ import { FakeBackendProvider } from './core/interceptors/fake-backend.intercepto
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
-    StatusBar,  
+    StatusBar,
     FakeBackendProvider,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

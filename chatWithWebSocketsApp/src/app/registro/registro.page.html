@@ -1,13 +1,13 @@
-<ion-header>
+<ion-header class="page-header">
   <br><br>
- <h2 style="color: whitesmoke; font-weight: bold; font-family: 'Montserrat';">&nbsp;Comece </h2>
- <h2 style="color: green; font-weight: bolder; font-family: 'Montserrat'">&nbsp;&nbsp; com tudo!</h2>
+ <h2 style="color: whitesmoke; font-weight: bold; font-family: 'Montserrat';" class="page-header-start">&nbsp;Comece </h2>
+ <h2 style="color: green; font-weight: bolder; font-family: 'Montserrat'" class="page-header-all">&nbsp;&nbsp; com tudo!</h2>
  <div class="alienImagem">
   <ion-img style="width: 60px; height: 60px;" src="/assets/images/LogoMakr-7OPp7B.png"></ion-img>
  </div>
 
 </ion-header>
-<ion-content>
+<ion-content class="register-form">
  
   <form (ngSubmit)="submit(form)" #form="ngForm" name="form">
     <br>
@@ -20,7 +20,7 @@
         O campo apelido é obrigatorio!
       </span>
     </ion-item>
-
+    <br>
     <ion-item>
       <ion-label position="floating" [ngStyle]="{'color' : (emailUsuario.valid) ? '#77DD77' : 'red'}">Email: </ion-label>
       <ion-input #emailUsuario="ngModel" 
@@ -31,20 +31,22 @@
         </span>
       </ion-input>
     </ion-item>
-
+    <br>
     <ion-item>
       <ion-label position="floating" [ngStyle]="{'color' : (senhaUsuario.valid) ? '#77DD77' : 'red'}">Senha: </ion-label>
-      <ion-input #senhaUsuario="ngModel" type="password" name="senhaUsuario" [(ngModel)]="usuario.password" [ngStyle]="{'border-color' : (!senhaUsuario.valid) ? 'red' : '#77DD77' }">
-        <span *ngIf="!senhaUsuario.valid">
-          O campo de email é obrigatorio!
-        </span>
-      </ion-input>
+      <div style="display: inline-block;">
+        <span *ngIf="usuario.password !== undefined && usuario.password.length < 5 && usuario.password !== ''" style="font-size: 10px; color: red">{{usuario.password?.length}}/5</span>
+        <ion-input #senhaUsuario="ngModel" type="password" name="senhaUsuario" [minlength]="5" [(ngModel)]="usuario.password" [ngStyle]="{'border-color' : (!senhaUsuario.valid) ? 'red' : '#77DD77' }">
+        </ion-input>
+      </div>
     </ion-item>
+    <br>
     <ion-item *ngIf = "usuario.password">
       <ion-label position="floating" [ngStyle]="{'color' : (confirmacaoPassword === '' || usuario.password === confirmacaoPassword) ? '#77DD77' : 'red'}">Confirmação de Senha: </ion-label>
       <ion-input #confirmacaoSenha="ngModel" type="password" name="confirmacaoSenha" [(ngModel)]="confirmacaoPassword" [ngStyle]="{'border-color' : (!confirmacaoSenha.valid) ? 'red' : '#77DD77' }">
       </ion-input>
     </ion-item>
+    <br>
     <ion-button type="submit" shape="round" fill="outline" style="--border-color: green; --color: green; margin-left: 25%;" [disabled]="!usuario.username|| !usuario.password || (confirmacaoSenha!== undefined || confirmacaoPassword !== usuario.password) || !usuario.email">Registrar!</ion-button>
   </form>
 </ion-content>

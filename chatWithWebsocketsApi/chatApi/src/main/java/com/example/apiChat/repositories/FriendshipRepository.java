@@ -9,6 +9,6 @@ import com.example.apiChat.models.User;
 
 public interface FriendshipRepository extends JpaRepository<Friendship, Long> {
 
-	List<User> findByUsuarioId(Long userId);
+	List<User> findByUser(Long userId);
 
 }

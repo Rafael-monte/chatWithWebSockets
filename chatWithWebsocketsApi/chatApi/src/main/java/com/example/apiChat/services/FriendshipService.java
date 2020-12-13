@@ -22,6 +22,6 @@ public class FriendshipService {
 	private UserRepository userRepository;
 	
 	public List<User> getAllFriends(Long userId) {
-		return repository.findByUsuarioId(userId);
+		return repository.findByUser(userId);
 	}
 }

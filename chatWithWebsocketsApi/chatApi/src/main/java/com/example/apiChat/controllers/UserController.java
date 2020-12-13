@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.apiChat.models.User;
 import com.example.apiChat.models.exceptions.RegisterNotFoundException;
+import com.example.apiChat.models.exceptions.UsuarioDuplicadoException;
 import com.example.apiChat.services.UserService;
 
 @RestController
@@ -33,26 +34,26 @@ public class UserController {
 	}
 	
 	
-	@CrossOrigin("*")
+	@CrossOrigin(origins = "*")
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<User> getById(@PathVariable("id") Long id) throws RegisterNotFoundException {
 		return ResponseEntity.ok(service.getById(id));
 	}
 	
-	@CrossOrigin("*")
+	@CrossOrigin(origins = "*")
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<User> save(@RequestBody User user) {
+	public ResponseEntity<User> save(@RequestBody User user) throws UsuarioDuplicadoException {
 		return ResponseEntity.ok(service.save(user));
 	}
 	
 	
-	@CrossOrigin("*")
+	@CrossOrigin(origins = "*")
 	@PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<User> update(@RequestBody User user) throws RegisterNotFoundException {
 		return ResponseEntity.ok(service.update(user));
 	}
 	
-	@CrossOrigin("*")
+	@CrossOrigin(origins = "*")
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<User> deleteById(@PathVariable("id") Long id) throws RegisterNotFoundException {
 		return ResponseEntity.ok(service.deleteById(id));

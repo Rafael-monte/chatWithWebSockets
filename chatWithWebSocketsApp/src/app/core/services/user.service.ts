@@ -17,7 +17,10 @@ export class UserService {
 
     public getById(id: number): Observable<User> {
         return this.stringifyData(this.http.get<User>(`${this.userRoute}/${id}`));
-        
+    }
+
+    public login(user: User): Observable<User> {
+        return this.stringifyData(this.http.post<User>(`${this.userRoute}/login`, user));
     }
 
     public save(user: User): Observable<User> {

@@ -41,6 +41,9 @@ public class User {
 	@JoinColumn(name = "PHOTO")
 	private FileModel photo;
 	
+	@Column(name = "SALT")
+	private String salt;
+	
 	@Column(name = "LASTTIMEONLINE")
 	private LocalDateTime lastTimeOnline;
 }
